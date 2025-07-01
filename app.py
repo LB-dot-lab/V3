@@ -8,6 +8,12 @@ import plotly.express as px
 import plotly.graph_objects as go
 from dataclasses import dataclass
 import re
+import sys
+import os
+
+# Add utils to path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from utils.protocol_loader import ProtocolLoader, Protocol
 
 # Configure Streamlit page
 st.set_page_config(
@@ -68,14 +74,7 @@ class HealthMetrics:
     stress: int
     focus: int
 
-@dataclass
-class Protocol:
-    title: str
-    description: str
-    timing: str
-    category: str
-    evidence: str
-    difficulty: str
+# Protocol class is now imported from utils.protocol_loader
 
 class SymptomAnalyzer:
     def __init__(self):
@@ -144,48 +143,7 @@ class SymptomAnalyzer:
         else:
             return "Your symptoms indicate a need for foundational support of your body's natural healing processes."
 
-class ProtocolGenerator:
-    def __init__(self):
-        self.protocols = {
-            "cortisol_imbalance": [
-                Protocol("Morning Light Exposure", "Go outside barefoot for 10 minutes at sunrise", "6:00-7:00 AM", "Circadian", "Regulates cortisol rhythm and vitamin D", "Easy"),
-                Protocol("Celtic Salt Water", "Add 1/2 tsp Celtic salt and lemon to morning water", "Upon waking", "Minerals", "Supports adrenal function and hydration", "Easy"),
-                Protocol("Adaptogenic Tea", "Ashwagandha or holy basil tea in evening", "7:00-8:00 PM", "Herbs", "Helps normalize cortisol levels", "Medium")
-            ],
-            "mineral_depletion": [
-                Protocol("Magnesium Glycinate", "200-400mg magnesium glycinate before bed", "9:00 PM", "Minerals", "Essential for 300+ enzymatic processes", "Easy"),
-                Protocol("Bone Broth", "Homemade bone broth with meals", "Lunch/Dinner", "Nutrition", "Rich in minerals and collagen", "Medium"),
-                Protocol("Trace Mineral Salt", "Use unrefined sea salt on all meals", "With meals", "Minerals", "Provides essential trace minerals", "Easy")
-            ],
-            "circadian_disruption": [
-                Protocol("Blue Light Block", "Wear blue light glasses 2 hours before bed", "2 hours before sleep", "Light", "Protects natural melatonin production", "Easy"),
-                Protocol("Morning Sun Gaze", "Look toward sunrise (not directly at sun) for 2-3 minutes", "Sunrise", "Light", "Sets circadian clock naturally", "Easy"),
-                Protocol("Device Curfew", "No screens 1 hour before intended sleep time", "Before bed", "Lifestyle", "Allows natural melatonin rise", "Medium")
-            ],
-            "digestive_inflammation": [
-                Protocol("Warm Foods Only", "Remove raw salads and cold drinks from meals", "All meals", "Nutrition", "Supports digestive fire and reduces inflammation", "Medium"),
-                Protocol("Digestive Bitters", "Take digestive bitters 15 minutes before meals", "Before eating", "Herbs", "Stimulates digestive enzymes", "Easy"),
-                Protocol("Bone Broth Fast", "12-hour intermittent fast with bone broth only", "2x per week", "Nutrition", "Gives digestive system rest and healing", "Hard")
-            ],
-            "nervous_system_dysregulation": [
-                Protocol("Box Breathing", "4-4-4-4 breath pattern for 3 minutes", "11:00 AM, 4:00 PM", "Breathwork", "Activates parasympathetic nervous system", "Easy"),
-                Protocol("Cold Exposure", "30-second cold shower finish", "Morning shower", "Temperature", "Strengthens nervous system resilience", "Medium"),
-                Protocol("Grounding Practice", "Sit in meditation or stillness for 10 minutes", "Evening", "Mindfulness", "Calms nervous system activation", "Medium")
-            ]
-        }
-
-    def generate_protocol(self, root_causes: List[str], duration_days: int = 7) -> List[Protocol]:
-        """Generate a personalized protocol based on root causes"""
-        selected_protocols = []
-        
-        for cause in root_causes:
-            if cause in self.protocols:
-                # Take 2-3 protocols per root cause to avoid overwhelming
-                selected_protocols.extend(self.protocols[cause][:3])
-        
-        # Remove duplicates and limit to 6-8 total protocols
-        unique_protocols = list({p.title: p for p in selected_protocols}.values())
-        return unique_protocols[:8]
+# Protocol generation is now handled by ProtocolLoader
 
 # Initialize session state
 if 'health_data' not in st.session_state:
@@ -197,7 +155,7 @@ if 'onboarding_complete' not in st.session_state:
 
 # Initialize analyzers
 symptom_analyzer = SymptomAnalyzer()
-protocol_generator = ProtocolGenerator()
+protocol_loader = ProtocolLoader()
 
 # Header
 st.markdown("""
@@ -305,22 +263,27 @@ elif page == "📝 Symptom Input":
                 st.markdown(f"• {category.replace('_', ' ').title()}")
             
             # Generate protocol
-            protocol = protocol_generator.generate_protocol(root_causes)
+            protocol = protocol_loader.get_protocols_for_causes(root_causes)
             st.session_state.current_protocol = protocol
             
             st.markdown("### 📋 Your 7-Day Protocol")
             st.write("Here's your personalized healing plan:")
             
             for protocol_item in protocol:
-                st.markdown(f"""
-                <div class="protocol-item">
-                    <h4>{protocol_item.title}</h4>
-                    <p><strong>When:</strong> {protocol_item.timing}</p>
-                    <p><strong>What:</strong> {protocol_item.description}</p>
-                    <p><strong>Why:</strong> {protocol_item.evidence}</p>
-                    <p><strong>Difficulty:</strong> {protocol_item.difficulty}</p>
-                </div>
-                """, unsafe_allow_html=True)
+                with st.expander(f"🎯 {protocol_item.title} ({protocol_item.difficulty})"):
+                    st.write(f"**When:** {protocol_item.timing}")
+                    st.write(f"**What:** {protocol_item.description}")
+                    st.write(f"**Why:** {protocol_item.evidence}")
+                    
+                    if protocol_item.instructions:
+                        st.write("**Instructions:**")
+                        for instruction in protocol_item.instructions:
+                            st.write(f"• {instruction}")
+                    
+                    if protocol_item.benefits:
+                        st.write("**Benefits:**")
+                        for benefit in protocol_item.benefits:
+                            st.write(f"✓ {benefit}")
             
             st.success("✅ Protocol generated! Check 'My Protocol' to start tracking.")
 
@@ -337,6 +300,11 @@ elif page == "📋 My Protocol":
                     st.write(f"**Action:** {protocol.description}")
                     st.write(f"**Evidence:** {protocol.evidence}")
                     st.write(f"**Category:** {protocol.category}")
+                    
+                    if protocol.instructions:
+                        st.write("**Detailed Instructions:**")
+                        for instruction in protocol.instructions:
+                            st.write(f"• {instruction}")
                     
                     # Simple completion tracking
                     completed = st.checkbox(f"Completed today", key=f"protocol_{i}")
