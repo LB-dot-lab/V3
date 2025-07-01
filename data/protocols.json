@@ -1,0 +1,327 @@
+{
+  "cortisol_imbalance": [
+    {
+      "title": "Morning Light Exposure",
+      "description": "Go outside barefoot for 10 minutes at sunrise",
+      "timing": "6:00-7:00 AM",
+      "category": "Circadian",
+      "evidence": "Regulates cortisol rhythm and vitamin D synthesis",
+      "difficulty": "Easy",
+      "instructions": [
+        "Step outside within 30 minutes of sunrise",
+        "Remove shoes and socks if weather permits",
+        "Look toward the horizon (not directly at sun)",
+        "Walk slowly or stand still for 10 minutes",
+        "Focus on deep breathing"
+      ],
+      "benefits": [
+        "Sets circadian clock naturally",
+        "Boosts vitamin D production",
+        "Reduces cortisol dysregulation",
+        "Improves sleep quality"
+      ]
+    },
+    {
+      "title": "Celtic Salt Water",
+      "description": "Add 1/2 tsp Celtic salt and lemon to morning water",
+      "timing": "Upon waking",
+      "category": "Minerals",
+      "evidence": "Supports adrenal function and cellular hydration",
+      "difficulty": "Easy",
+      "instructions": [
+        "Use unrefined Celtic or Himalayan salt",
+        "Mix 1/2 teaspoon in 16-20oz water",
+        "Add fresh lemon juice",
+        "Drink on empty stomach",
+        "Wait 30 minutes before eating"
+      ],
+      "benefits": [
+        "Replenishes electrolytes",
+        "Supports adrenal glands",
+        "Improves cellular hydration",
+        "Aids mineral absorption"
+      ]
+    },
+    {
+      "title": "Adaptogenic Evening Tea",
+      "description": "Ashwagandha or holy basil tea before bed",
+      "timing": "7:00-8:00 PM",
+      "category": "Herbs",
+      "evidence": "Clinical studies show cortisol normalization",
+      "difficulty": "Medium",
+      "instructions": [
+        "Steep 1 tsp dried herb in hot water for 10 minutes",
+        "Add raw honey if desired",
+        "Drink 2-3 hours before bed",
+        "Start with 3-4 times per week",
+        "Monitor sleep quality"
+      ],
+      "benefits": [
+        "Normalizes cortisol levels",
+        "Reduces stress response",
+        "Improves sleep onset",
+        "Supports nervous system"
+      ]
+    }
+  ],
+  "mineral_depletion": [
+    {
+      "title": "Magnesium Glycinate Protocol",
+      "description": "200-400mg magnesium glycinate before bed",
+      "timing": "9:00 PM",
+      "category": "Minerals",
+      "evidence": "Required for 300+ enzymatic processes",
+      "difficulty": "Easy",
+      "instructions": [
+        "Choose magnesium glycinate form for best absorption",
+        "Start with 200mg and increase if needed",
+        "Take 1-2 hours before intended sleep",
+        "Take with small amount of food if stomach sensitive",
+        "Reduce dose if loose stools occur"
+      ],
+      "benefits": [
+        "Improves sleep quality",
+        "Reduces muscle tension",
+        "Supports energy production",
+        "Calms nervous system"
+      ]
+    },
+    {
+      "title": "Mineral-Rich Bone Broth",
+      "description": "Homemade bone broth with meals",
+      "timing": "Lunch/Dinner",
+      "category": "Nutrition",
+      "evidence": "Rich in bioavailable minerals and collagen",
+      "difficulty": "Medium",
+      "instructions": [
+        "Use grass-fed bones from local butcher",
+        "Simmer 12-24 hours with apple cider vinegar",
+        "Add vegetables in last 2 hours",
+        "Consume 1 cup with meals",
+        "Freeze portions for convenience"
+      ],
+      "benefits": [
+        "Provides bioavailable minerals",
+        "Supports gut lining",
+        "Rich in collagen",
+        "Aids digestion"
+      ]
+    },
+    {
+      "title": "Trace Mineral Salt",
+      "description": "Use unrefined sea salt on all meals",
+      "timing": "With meals",
+      "category": "Minerals",
+      "evidence": "Provides 80+ trace minerals",
+      "difficulty": "Easy",
+      "instructions": [
+        "Replace table salt with Celtic or Himalayan salt",
+        "Use liberally on all foods",
+        "Add to cooking water",
+        "Listen to body's salt cravings",
+        "Increase water intake accordingly"
+      ],
+      "benefits": [
+        "Provides essential trace minerals",
+        "Supports thyroid function",
+        "Improves hydration",
+        "Enhances nutrient absorption"
+      ]
+    }
+  ],
+  "circadian_disruption": [
+    {
+      "title": "Blue Light Blocking",
+      "description": "Wear blue light glasses 2 hours before bed",
+      "timing": "2 hours before sleep",
+      "category": "Light",
+      "evidence": "Protects natural melatonin production",
+      "difficulty": "Easy",
+      "instructions": [
+        "Invest in quality blue light blocking glasses",
+        "Put on 2 hours before intended sleep time",
+        "Dim all lights in living space",
+        "Use amber/red lighting only",
+        "Keep bedroom completely dark"
+      ],
+      "benefits": [
+        "Preserves melatonin production",
+        "Improves sleep onset",
+        "Reduces eye strain",
+        "Better sleep quality"
+      ]
+    },
+    {
+      "title": "Morning Sun Gazing",
+      "description": "Look toward sunrise for 2-3 minutes",
+      "timing": "Sunrise",
+      "category": "Light",
+      "evidence": "Sets circadian clock via suprachiasmatic nucleus",
+      "difficulty": "Easy",
+      "instructions": [
+        "Face east within 1 hour of sunrise",
+        "Look toward horizon, not directly at sun",
+        "No sunglasses or windows",
+        "2-3 minutes minimum exposure",
+        "Combine with light movement"
+      ],
+      "benefits": [
+        "Sets circadian rhythm",
+        "Improves mood via serotonin",
+        "Regulates cortisol timing",
+        "Enhances vitamin D"
+      ]
+    },
+    {
+      "title": "Device Curfew",
+      "description": "No screens 1 hour before sleep time",
+      "timing": "Before bed",
+      "category": "Lifestyle",
+      "evidence": "Allows natural melatonin rise",
+      "difficulty": "Medium",
+      "instructions": [
+        "Set all devices to airplane mode",
+        "Use analog alarm clock",
+        "Read physical books instead",
+        "Practice gentle stretching",
+        "Use red light bulbs only"
+      ],
+      "benefits": [
+        "Natural melatonin production",
+        "Reduced mental stimulation",
+        "Better sleep preparation",
+        "Improved sleep architecture"
+      ]
+    }
+  ],
+  "digestive_inflammation": [
+    {
+      "title": "Warm Foods Protocol",
+      "description": "Remove raw salads and cold drinks",
+      "timing": "All meals",
+      "category": "Nutrition",
+      "evidence": "Supports digestive fire per Ayurvedic and TCM principles",
+      "difficulty": "Medium",
+      "instructions": [
+        "Cook all vegetables lightly",
+        "Drink room temperature or warm water",
+        "Avoid ice and cold beverages",
+        "Steam, sauté, or roast produce",
+        "Add warming spices like ginger"
+      ],
+      "benefits": [
+        "Easier digestion",
+        "Reduced bloating",
+        "Better nutrient absorption",
+        "Less digestive stress"
+      ]
+    },
+    {
+      "title": "Digestive Bitters",
+      "description": "Take bitters 15 minutes before meals",
+      "timing": "Before eating",
+      "category": "Herbs",
+      "evidence": "Stimulates digestive enzyme production",
+      "difficulty": "Easy",
+      "instructions": [
+        "Use liquid herbal bitters (dandelion, gentian)",
+        "Take 1/4 teaspoon 15 minutes before meals",
+        "Hold in mouth briefly before swallowing",
+        "Start with once daily, increase gradually",
+        "Best with largest meal of day"
+      ],
+      "benefits": [
+        "Increases digestive enzymes",
+        "Improves bile flow",
+        "Reduces bloating",
+        "Better nutrient breakdown"
+      ]
+    },
+    {
+      "title": "Intermittent Bone Broth Fast",
+      "description": "12-hour fast with bone broth only",
+      "timing": "2x per week",
+      "category": "Nutrition",
+      "evidence": "Gives digestive system rest and repair time",
+      "difficulty": "Hard",
+      "instructions": [
+        "Choose 2 non-consecutive days per week",
+        "Fast for 12-14 hours",
+        "Consume only bone broth and water",
+        "Break fast gently with cooked vegetables",
+        "Monitor energy and digestion"
+      ],
+      "benefits": [
+        "Digestive system reset",
+        "Reduced inflammation",
+        "Improved insulin sensitivity",
+        "Cellular repair processes"
+      ]
+    }
+  ],
+  "nervous_system_dysregulation": [
+    {
+      "title": "Box Breathing Practice",
+      "description": "4-4-4-4 breath pattern for 3 minutes",
+      "timing": "11:00 AM, 4:00 PM",
+      "category": "Breathwork",
+      "evidence": "Activates parasympathetic nervous system",
+      "difficulty": "Easy",
+      "instructions": [
+        "Inhale for 4 counts",
+        "Hold breath for 4 counts",
+        "Exhale for 4 counts",
+        "Hold empty for 4 counts",
+        "Repeat for 3-5 minutes twice daily"
+      ],
+      "benefits": [
+        "Calms nervous system",
+        "Reduces stress hormones",
+        "Improves focus",
+        "Lowers blood pressure"
+      ]
+    },
+    {
+      "title": "Cold Exposure Therapy",
+      "description": "30-second cold shower finish",
+      "timing": "Morning shower",
+      "category": "Temperature",
+      "evidence": "Strengthens nervous system resilience",
+      "difficulty": "Medium",
+      "instructions": [
+        "End shower with 30 seconds cold water",
+        "Start with lukewarm and gradually decrease",
+        "Focus on calm breathing during exposure",
+        "Build up tolerance over weeks",
+        "Never shock system suddenly"
+      ],
+      "benefits": [
+        "Increases stress resilience",
+        "Boosts metabolism",
+        "Improves circulation",
+        "Strengthens immune system"
+      ]
+    },
+    {
+      "title": "Evening Grounding Practice",
+      "description": "10 minutes meditation or stillness",
+      "timing": "Evening",
+      "category": "Mindfulness",
+      "evidence": "Calms nervous system activation",
+      "difficulty": "Medium",
+      "instructions": [
+        "Find quiet space without distractions",
+        "Sit comfortably with spine straight",
+        "Focus on breath or body sensations",
+        "Notice thoughts without judgment",
+        "Start with 5 minutes, build to 10+"
+      ],
+      "benefits": [
+        "Reduces cortisol",
+        "Improves sleep preparation",
+        "Increases self-awareness",
+        "Builds stress resilience"
+      ]
+    }
+  ]
+}
